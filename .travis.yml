@@ -3,6 +3,7 @@ python:
 - '3.7'
 services:
 - docker
+
 env:
   global:
   - GOLOOP_GIT=https://github.com/icon-project/goloop
