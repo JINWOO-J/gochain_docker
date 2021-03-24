@@ -37,7 +37,7 @@ install:
 - git checkout $GOLOOP_GIT_TAG
 - make ${goloop_type}-image
 script:
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 - docker tag goloop $DOCKER_USER/${goloop_type}:$TAG_NAME
 - docker tag goloop $DOCKER_USER/${goloop_type}:latest
 - docker push $DOCKER_USER/${goloop_type}:$TAG_NAME
